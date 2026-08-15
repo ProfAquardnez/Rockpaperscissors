@@ -1,0 +1,466 @@
+{
+  "name": "Rock Paper Scissors Playtest",
+  "menuBackgroundImage": "",
+  "defaultRessources": {
+    "backgrounds": [
+      ""
+    ],
+    "decksUrl": ""
+  },
+  "customHelp": "RPC - Rock Paper Scissors Deckbuilder (playtest)\n\nGOAL: most VP when the bank empties.\n\nTURN: Clear (trim Rule Row to 5) - Draw (up to 7) - 3 Actions (play a rule to Rule Row, play an instant, or draw) - Buy (declare a money pool from hand, buy from Buy up to that value) - Battle (challenge up to 2 players OR fight 1 boss) - End (refill Buy).\n\nBATTLE: challenge a player. Each activates rule cards (1 free; a 2nd costs 1 VP, refunded on a win). Non-battlers bet. Both secretly throw one card from hand into Battle Arena, then reveal. Rock>Scissors>Paper>Rock. Winner gains 1 VP + 1 per rule card played (both sides, cancelled rules included).\n\nBETS (non-battlers, max 3 VP): Winner 2x - Throw 3x - Parlay 4x.\n\nBOSS: pay entry VP, throw vs the Boss Play deck. Win = take the boss into your deck; lose = pay its VP.\n\nVP: start 3 each; bank = 20 x players. At 0 VP you hold 1 temporary VP.\nNote: card draw is 'up to 7' - top your hand up manually each turn.",
+  "cardRotation": 45,
+  "cards": {
+    "dataUrl": "https://cdn.jsdelivr.net/gh/YOUR-USERNAME/rpc-cards@main/CardList_RPC.json",
+    "cardBack": "https://cdn.jsdelivr.net/gh/YOUR-USERNAME/rpc-cards@main/cards/card-back.png"
+  },
+  "deckBuilding": {
+    "mainFilters": [],
+    "formats": [
+      {
+        "title": "Classic",
+        "gameplay": "Classic",
+        "customCategories": [
+          "Rule cards",
+          "Challenge Cards",
+          "Boss Cards"
+        ]
+      }
+    ]
+  },
+  "gameplay": {
+    "Classic": {
+      "mulligan": {
+        "info": "Starting hand is 5.",
+        "startingHandSize": "5",
+        "drawNewHand": false,
+        "putSelectionAtBottom": false,
+        "drawNewSelectedCards": false
+      },
+      "newTurn": {
+        "drawOnStart": true,
+        "sharedTurn": false,
+        "firstPlayerTokenName": "",
+        "drawPerTurn": "2"
+      },
+      "defaultNotes": "Turn: Clear - Draw(7) - 3 Actions - Buy - Battle - End.  Battle: rules - bets - secret throw - reveal - score (1 + rules).",
+      "tokens": [],
+      "countersStartingValues": [
+        "3"
+      ],
+      "hideFacedDownCards": true,
+      "sections": {
+        "customSections": [
+          "Boss_Deck",
+          "Bosses",
+          "Boss_Play_Deck",
+          "Challenge_Deck",
+          "Challenges",
+          "Buy_Deck",
+          "Buy",
+          "Challenger_Betting",
+          "Challenger_Rules",
+          "Battle_arena",
+          "Defender_Rules",
+          "Defender_Betting",
+          "Player_Deck",
+          "Player_Discard",
+          "Rule_Row",
+          "Player_Hand"
+        ],
+        "layout": {
+          "direction": "column",
+          "isSymetricalForOpponents": false,
+          "content": [
+            {
+              "direction": "row",
+              "style": false,
+              "content": [
+                {
+                  "direction": "column",
+                  "style": false,
+                  "content": [
+                    {
+                      "section": "Boss_Deck",
+                      "style": false
+                    },
+                    {
+                      "section": "Bosses",
+                      "style": false
+                    },
+                    {
+                      "section": "Boss_Play_Deck",
+                      "style": false
+                    }
+                  ],
+                  "isSymetricalForOpponents": false
+                },
+                {
+                  "direction": "column",
+                  "style": false,
+                  "content": [
+                    {
+                      "section": "Challenge_Deck",
+                      "style": false
+                    },
+                    {
+                      "section": "Challenges",
+                      "style": false
+                    }
+                  ],
+                  "isSymetricalForOpponents": false
+                },
+                {
+                  "direction": "column",
+                  "style": false,
+                  "content": [
+                    {
+                      "section": "Buy_Deck",
+                      "style": false
+                    },
+                    {
+                      "section": "Buy",
+                      "style": false
+                    }
+                  ],
+                  "isSymetricalForOpponents": false
+                }
+              ],
+              "isSymetricalForOpponents": false
+            },
+            {
+              "direction": "row",
+              "style": false,
+              "content": [
+                {
+                  "section": "Challenger_Betting",
+                  "style": false
+                },
+                {
+                  "section": "Challenger_Rules",
+                  "style": false
+                },
+                {
+                  "section": "Battle_arena",
+                  "style": false
+                },
+                {
+                  "section": "Defender_Rules",
+                  "style": false
+                },
+                {
+                  "section": "Defender_Betting",
+                  "style": false
+                }
+              ],
+              "isSymetricalForOpponents": false
+            },
+            {
+              "direction": "row",
+              "style": false,
+              "content": [
+                {
+                  "direction": "column",
+                  "style": false,
+                  "content": [
+                    {
+                      "section": "Player_Deck",
+                      "style": false
+                    },
+                    {
+                      "section": "Player_Discard",
+                      "style": false
+                    }
+                  ],
+                  "isSymetricalForOpponents": false
+                },
+                {
+                  "direction": "column",
+                  "style": false,
+                  "content": [
+                    {
+                      "section": "Rule_Row",
+                      "style": false
+                    },
+                    {
+                      "section": "Player_Hand",
+                      "style": false
+                    }
+                  ],
+                  "isSymetricalForOpponents": false
+                }
+              ],
+              "isSymetricalForOpponents": false
+            }
+          ]
+        },
+        "categoriesAlreadyOnBoard": [
+          "Boss_Deck",
+          "Boss_Play_Deck",
+          "Challenge_Deck",
+          "Buy_Deck",
+          "Player_Deck"
+        ],
+        "autoPlayFromHand": {},
+        "autoPlayFromStack": {},
+        "sectionsDict": {
+          "Boss_Deck": {
+            "title": "Boss_Deck",
+            "isHidden": "no",
+            "height": "SMALL",
+            "alignment": "START",
+            "opponentAlignment": false,
+            "noAutoPayTo": true,
+            "isHorizontalAllowed": true,
+            "displayedTitle": "Boss Deck",
+            "enterTapped": false,
+            "enterSpun": false,
+            "isGroupForbidden": false,
+            "keepTappedNewTurn": false,
+            "showHiddenCardInHistory": false,
+            "noQuickActions": false
+          },
+          "Bosses": {
+            "title": "Bosses",
+            "isHidden": "no",
+            "height": "SMALL",
+            "alignment": "START",
+            "opponentAlignment": false,
+            "noAutoPayTo": true,
+            "isHorizontalAllowed": true,
+            "displayedTitle": "Bosses",
+            "enterTapped": false,
+            "enterSpun": false,
+            "isGroupForbidden": false,
+            "keepTappedNewTurn": false,
+            "showHiddenCardInHistory": false,
+            "noQuickActions": false
+          },
+          "Boss_Play_Deck": {
+            "title": "Boss_Play_Deck",
+            "isHidden": "no",
+            "height": "SMALL",
+            "alignment": "START",
+            "opponentAlignment": false,
+            "noAutoPayTo": true,
+            "isHorizontalAllowed": true,
+            "displayedTitle": "Boss Play Deck",
+            "enterTapped": false,
+            "enterSpun": false,
+            "isGroupForbidden": false,
+            "keepTappedNewTurn": false,
+            "showHiddenCardInHistory": false,
+            "noQuickActions": false
+          },
+          "Challenge_Deck": {
+            "title": "Challenge_Deck",
+            "isHidden": "no",
+            "height": "SMALL",
+            "alignment": "START",
+            "opponentAlignment": false,
+            "noAutoPayTo": true,
+            "isHorizontalAllowed": true,
+            "displayedTitle": "Challenge Deck",
+            "enterTapped": false,
+            "enterSpun": false,
+            "isGroupForbidden": false,
+            "keepTappedNewTurn": false,
+            "showHiddenCardInHistory": false,
+            "noQuickActions": false
+          },
+          "Challenges": {
+            "title": "Challenges",
+            "isHidden": "no",
+            "height": "MEDIUM",
+            "alignment": "START",
+            "opponentAlignment": false,
+            "noAutoPayTo": true,
+            "isHorizontalAllowed": true,
+            "displayedTitle": "Challenges",
+            "enterTapped": false,
+            "enterSpun": false,
+            "isGroupForbidden": false,
+            "keepTappedNewTurn": false,
+            "showHiddenCardInHistory": false,
+            "noQuickActions": false
+          },
+          "Buy_Deck": {
+            "title": "Buy_Deck",
+            "isHidden": "no",
+            "height": "SMALL",
+            "alignment": "START",
+            "opponentAlignment": false,
+            "noAutoPayTo": true,
+            "isHorizontalAllowed": true,
+            "displayedTitle": "Buy Deck",
+            "enterTapped": false,
+            "enterSpun": false,
+            "isGroupForbidden": false,
+            "keepTappedNewTurn": false,
+            "showHiddenCardInHistory": false,
+            "noQuickActions": false
+          },
+          "Buy": {
+            "title": "Buy",
+            "isHidden": "no",
+            "height": "MEDIUM",
+            "alignment": "CENTER",
+            "opponentAlignment": false,
+            "noAutoPayTo": true,
+            "isHorizontalAllowed": true,
+            "displayedTitle": "Buy",
+            "enterTapped": false,
+            "enterSpun": false,
+            "isGroupForbidden": false,
+            "keepTappedNewTurn": false,
+            "showHiddenCardInHistory": false,
+            "noQuickActions": false
+          },
+          "Challenger_Betting": {
+            "title": "Challenger_Betting",
+            "isHidden": "no",
+            "height": "SMALL",
+            "alignment": "CENTER",
+            "opponentAlignment": false,
+            "noAutoPayTo": false,
+            "isHorizontalAllowed": true,
+            "displayedTitle": "Challenger Betting",
+            "enterTapped": false,
+            "enterSpun": false,
+            "isGroupForbidden": false,
+            "keepTappedNewTurn": false,
+            "showHiddenCardInHistory": false,
+            "noQuickActions": false
+          },
+          "Challenger_Rules": {
+            "title": "Challenger_Rules",
+            "isHidden": "no",
+            "height": "MEDIUM",
+            "alignment": "CENTER",
+            "opponentAlignment": false,
+            "noAutoPayTo": false,
+            "isHorizontalAllowed": true,
+            "displayedTitle": "Challenger Rules",
+            "enterTapped": false,
+            "enterSpun": false,
+            "isGroupForbidden": false,
+            "keepTappedNewTurn": false,
+            "showHiddenCardInHistory": false,
+            "noQuickActions": false
+          },
+          "Battle_arena": {
+            "title": "Battle_arena",
+            "isHidden": "no",
+            "height": "MEDIUM",
+            "alignment": "CENTER",
+            "opponentAlignment": false,
+            "noAutoPayTo": false,
+            "isHorizontalAllowed": true,
+            "displayedTitle": "Battle arena",
+            "enterTapped": false,
+            "enterSpun": false,
+            "isGroupForbidden": false,
+            "keepTappedNewTurn": false,
+            "showHiddenCardInHistory": false,
+            "noQuickActions": false
+          },
+          "Defender_Rules": {
+            "title": "Defender_Rules",
+            "isHidden": "no",
+            "height": "MEDIUM",
+            "alignment": "CENTER",
+            "opponentAlignment": false,
+            "noAutoPayTo": false,
+            "isHorizontalAllowed": true,
+            "displayedTitle": "Defender Rules",
+            "enterTapped": false,
+            "enterSpun": false,
+            "isGroupForbidden": false,
+            "keepTappedNewTurn": false,
+            "showHiddenCardInHistory": false,
+            "noQuickActions": false
+          },
+          "Defender_Betting": {
+            "title": "Defender_Betting",
+            "isHidden": "no",
+            "height": "SMALL",
+            "alignment": "CENTER",
+            "opponentAlignment": false,
+            "noAutoPayTo": false,
+            "isHorizontalAllowed": true,
+            "displayedTitle": "Defender Betting",
+            "enterTapped": false,
+            "enterSpun": false,
+            "isGroupForbidden": false,
+            "keepTappedNewTurn": false,
+            "showHiddenCardInHistory": false,
+            "noQuickActions": false
+          },
+          "Player_Deck": {
+            "title": "Player_Deck",
+            "isHidden": "no",
+            "height": "SMALL",
+            "alignment": "START",
+            "opponentAlignment": false,
+            "noAutoPayTo": true,
+            "isHorizontalAllowed": true,
+            "displayedTitle": "Player Deck",
+            "enterTapped": false,
+            "enterSpun": false,
+            "isGroupForbidden": false,
+            "keepTappedNewTurn": false,
+            "showHiddenCardInHistory": false,
+            "noQuickActions": false
+          },
+          "Player_Discard": {
+            "title": "Player_Discard",
+            "isHidden": "no",
+            "height": "SMALL",
+            "alignment": "START",
+            "opponentAlignment": false,
+            "noAutoPayTo": false,
+            "isHorizontalAllowed": true,
+            "displayedTitle": "Player Discard",
+            "enterTapped": false,
+            "enterSpun": false,
+            "isGroupForbidden": false,
+            "keepTappedNewTurn": false,
+            "showHiddenCardInHistory": false,
+            "noQuickActions": false
+          },
+          "Rule_Row": {
+            "title": "Rule_Row",
+            "isHidden": "no",
+            "height": "MEDIUM",
+            "alignment": "CENTER",
+            "opponentAlignment": false,
+            "noAutoPayTo": false,
+            "isHorizontalAllowed": true,
+            "displayedTitle": "Rule Row",
+            "enterTapped": false,
+            "enterSpun": false,
+            "isGroupForbidden": false,
+            "keepTappedNewTurn": false,
+            "showHiddenCardInHistory": false,
+            "noQuickActions": false
+          },
+          "Player_Hand": {
+            "title": "Player_Hand",
+            "isHidden": "yes",
+            "height": "MEDIUM",
+            "alignment": "CENTER",
+            "opponentAlignment": false,
+            "noAutoPayTo": false,
+            "isHorizontalAllowed": true,
+            "displayedTitle": "Player Hand",
+            "enterTapped": false,
+            "enterSpun": false,
+            "isGroupForbidden": false,
+            "keepTappedNewTurn": false,
+            "showHiddenCardInHistory": false,
+            "noQuickActions": false
+          }
+        }
+      }
+    }
+  }
+}
